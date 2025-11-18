@@ -1,6 +1,9 @@
 import requests
 import streamlit as st
 import pandas as pd
+import requests
+
+response = requests.get(url, verify=False)
 
 st.title("台灣氣象資料 Dashboard")
 
@@ -18,4 +21,5 @@ st.subheader(f"{location['locationName']} 36小時預報")
 for element in location ["weatherElement"]:
     name = element ["elementName"]
     value = element ["time"] [0] ["parameter"] ["parameterName"]
+
     st.write(f"{name} : {value}")
